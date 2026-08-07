@@ -1,11 +1,11 @@
 [
   {
-    "model": "H50K6UG",
-    "description": "Smart TV 50\" 4K UHD",
-    "file": "H50K6UG_update.zip",
+    "model": "H32K85GX",
+    "description": "Smart TV 32" - Modelo: H32K85GX",
+    "file": "Software.-.H32K85.zip",
     "size": "1.6 GB",
-    "date": "2026-07-15",
-    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H50K6UG/H50K6UG_update.zip"
+    "date": "2026-08-07",
+    "url": "https://github.com/techsup-haier/haier-firmware-portal/releases/download/fw-H32K85GX/Software.-.H32K85.zip"
   },
   {
     "model": "H55K6UG",
