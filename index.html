@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haier Brasil — Firmware Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --haier-red: #CC0000;
+      --haier-red-hover: #A30000;
+      --haier-red-soft: #FFF0F0;
+      --bg: #F5F6F8;
+      --surface: #FFFFFF;
+      --text-primary: #1A1D23;
+      --text-secondary: #6B7280;
+      --text-tertiary: #9CA3AF;
+      --border: #E5E7EB;
+      --border-light: #F0F1F3;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--haier-red);
+      letter-spacing: -0.5px;
+    }
+
+    .header-divider {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .header-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .header-badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--haier-red);
+      background: var(--haier-red-soft);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── HERO / SEARCH ── */
+    .hero {
+      padding: 60px 24px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .search-wrapper {
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 52px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 500;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .search-input::placeholder {
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+
+    .search-input:focus {
+      border-color: var(--haier-red);
+      box-shadow: var(--shadow-md), 0 0 0 4px rgba(204, 0, 0, 0.08);
+    }
+
+    .search-input:focus ~ .search-icon {
+      color: var(--haier-red);
+    }
+
+    .search-hint {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .search-hint kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: var(--border-light);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    /* ── RESULTS ── */
+    .results-area {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      width: 100%;
+    }
+
+    .results-count {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      padding-left: 4px;
+    }
+
+    .firmware-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .firmware-card:hover {
+      border-color: #D1D5DB;
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-model {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .meta-item {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .meta-item svg {
+      flex-shrink: 0;
+    }
+
+    .card-download {
+      flex-shrink: 0;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--haier-red);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn-download:hover {
+      background: var(--haier-red-hover);
+    }
+
+    .btn-download:active {
+      transform: scale(0.97);
+    }
+
+    /* ── STATES ── */
+    .state-message {
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    .state-message .state-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .state-message h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .state-message p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .state-loading .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--haier-red);
+      border-radius: 50%;
+      margin: 0 3px;
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+
+    .state-loading .dot:nth-child(2) { animation-delay: 0.15s; }
+    .state-loading .dot:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 20px 24px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 28px; }
+      .hero h1 { font-size: 22px; }
+      .search-input { font-size: 15px; padding: 14px 16px 14px 46px; }
+      .results-area { padding: 0 16px 40px; }
+      .firmware-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 16px 18px;
+      }
+      .btn-download {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+      }
+      .header-badge { display: none; }
+    }
+
+    /* ── HIGHLIGHT MATCH ── */
+    mark {
+      background: rgba(204, 0, 0, 0.10);
+      color: var(--haier-red);
+      padding: 1px 2px;
+      border-radius: 3px;
+      font-weight: inherit;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <span class="header-logo">Haier</span>
+    <div class="header-divider"></div>
+    <span class="header-subtitle">Firmware Center</span>
+    <span class="header-badge">Uso Interno</span>
+  </header>
+
+  <!-- HERO + SEARCH -->
+  <section class="hero">
+    <h1>Busca de Firmware</h1>
+    <p>Digite o modelo da TV para encontrar a atualização disponível.</p>
+    <div class="search-wrapper">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Ex: H50K6UG, LE42K6000..."
+        autocomplete="off"
+        autofocus
+      >
+      <p class="search-hint">
+        <kbd>11</kbd> modelos disponíveis — busca por modelo
+      </p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-area" id="resultsArea">
+    <!-- Populated by JS -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    Haier Brasil — Assistência Técnica · Atualizado em <span id="lastUpdate"></span>
+  </footer>
+
+  <script>
+    const CATALOG_URL = 'firmware-catalog.json';
+    let catalog = [];
+
+    // ── ICONS (inline SVG strings) ──
+    const icons = {
+      download: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+      file: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>',
+      calendar: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+      size: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>'
+    };
+
+    // ── LOAD CATALOG ──
+    async function loadCatalog() {
+      showLoading();
+      try {
+        const res = await fetch(CATALOG_URL);
+        if (!res.ok) throw new Error('Erro ao carregar catálogo');
+        catalog = await res.json();
+
+        // Update count hint
+        document.querySelector('.search-hint kbd').textContent = catalog.length;
+
+        // Find most recent update date
+        const dates = catalog.map(f => f.date).sort().reverse();
+        if (dates.length) {
+          document.getElementById('lastUpdate').textContent = formatDate(dates[0]);
+        }
+
+        showInitial();
+      } catch (err) {
+        showError('Não foi possível carregar o catálogo de firmware.');
+        console.error(err);
+      }
+    }
+
+    // ── SEARCH ──
+    function doSearch(query) {
+      const q = query.trim().toUpperCase();
+
+      if (!q) {
+        showInitial();
+        return;
+      }
+
+      const results = catalog.filter(fw =>
+        fw.model.toUpperCase().includes(q)
+      );
+
+      if (results.length === 0) {
+        showNotFound(query);
+      } else {
+        showResults(results, q);
+      }
+    }
+
+    // ── RENDER FUNCTIONS ──
+    function showLoading() {
+      document.getElementById('resultsArea').innerHTML = `
+        <div class="state-message state-loading">
+          <div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <p style="margin-top: 12px">Carregando catálogo…</p>
+        </div>`;
+    }
+
+    function showInitial() {
+      showResults(catalog, '');
+    }
+
+    function showNotFound(query) {
+      document.getElementById('resultsArea').innerHTML = `
+        <div class="state-message">
+          <div class="state-icon">🔍</div>
+          <h3>Nenhum resultado para "${escapeHtml(query)}"</h3>
+          <p>Verifique o modelo digitado ou tente uma busca parcial (ex: K6UG).</p>
+        </div>`;
+    }
+
+    function showError(msg) {
+      document.getElementById('resultsArea').innerHTML = `
+        <div class="state-message">
+          <div class="state-icon">⚠️</div>
+          <h3>Erro</h3>
+          <p>${escapeHtml(msg)}</p>
+        </div>`;
+    }
+
+    function showResults(items, query) {
+      const countLabel = items.length === catalog.length
+        ? `Todos os modelos (${items.length})`
+        : `${items.length} resultado${items.length !== 1 ? 's' : ''}`;
+
+      const cards = items.map(fw => `
+        <div class="firmware-card">
+          <div class="card-info">
+            <div class="card-model">${highlightMatch(fw.model, query)}</div>
+            <div class="card-description">${escapeHtml(fw.description)}</div>
+            <div class="card-meta">
+              <span class="meta-item">${icons.file} ${escapeHtml(fw.file)}</span>
+              <span class="meta-item">${icons.size} ${escapeHtml(fw.size)}</span>
+              <span class="meta-item">${icons.calendar} ${formatDate(fw.date)}</span>
+            </div>
+          </div>
+          <div class="card-download">
+            <a class="btn-download" href="${escapeHtml(fw.url)}" download>
+              ${icons.download} Baixar
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('resultsArea').innerHTML = `
+        <div class="results-count">${countLabel}</div>
+        ${cards}
+      `;
+    }
+
+    // ── HELPERS ──
+    function highlightMatch(text, query) {
+      if (!query) return escapeHtml(text);
+      const idx = text.toUpperCase().indexOf(query);
+      if (idx === -1) return escapeHtml(text);
+      const before = text.slice(0, idx);
+      const match = text.slice(idx, idx + query.length);
+      const after = text.slice(idx + query.length);
+      return escapeHtml(before) + '<mark>' + escapeHtml(match) + '</mark>' + escapeHtml(after);
+    }
+
+    function formatDate(dateStr) {
+      const [y, m, d] = dateStr.split('-');
+      return `${d}/${m}/${y}`;
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // ── DEBOUNCE ──
+    function debounce(fn, ms) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), ms);
+      };
+    }
+
+    // ── INIT ──
+    document.getElementById('searchInput').addEventListener('input',
+      debounce(e => doSearch(e.target.value), 150)
+    );
+
+    loadCatalog();
+  </script>
+</body>
+</html>
