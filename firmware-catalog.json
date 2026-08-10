@@ -1,130 +1,90 @@
 [
   {
-    "model": "H32K85GX",
-    "description": "Smart TV 32\" - Série K85",
-    "file": "Firmware K85 (32\" e 43\")",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1x72mXInsFKB74pcbTNeKRB4IdtLGEel8"
+    "model": "H50K6UG",
+    "description": "Smart TV 50\" 4K UHD",
+    "file": "H50K6UG_update.zip",
+    "size": "1.6 GB",
+    "date": "2026-07-15",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H50K6UG/H50K6UG_update.zip"
   },
   {
-    "model": "H43K85GFX",
-    "description": "Smart TV 43\" - Série K85",
-    "file": "Firmware K85 (32\" e 43\")",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1x72mXInsFKB74pcbTNeKRB4IdtLGEel8"
+    "model": "H55K6UG",
+    "description": "Smart TV 55\" 4K UHD",
+    "file": "H55K6UG_update.zip",
+    "size": "1.5 GB",
+    "date": "2026-06-20",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H55K6UG/H55K6UG_update.zip"
   },
   {
-    "model": "H50K85GUX",
-    "description": "Smart TV 50\" 4K - Série K85",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
+    "model": "H58K6UG",
+    "description": "Smart TV 58\" 4K UHD",
+    "file": "H58K6UG_update.zip",
+    "size": "1.5 GB",
+    "date": "2026-05-10",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H58K6UG/H58K6UG_update.zip"
   },
   {
-    "model": "H55K85GUX",
-    "description": "Smart TV 55\" 4K - Série K85",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H65K85GUX",
-    "description": "Smart TV 65\" 4K - Série K85",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H75K85GUX",
-    "description": "Smart TV 75\" 4K - Série K85",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H50S80GUX",
-    "description": "Smart TV 50\" 4K - Série S80",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H55S80GUX",
-    "description": "Smart TV 55\" 4K - Série S80",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H65S80GUX",
-    "description": "Smart TV 65\" 4K - Série S80",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H75S80GUX",
-    "description": "Smart TV 75\" 4K - Série S80",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H85S80GUX",
-    "description": "Smart TV 85\" 4K - Série S80",
-    "file": "Firmware K85 (50\"~75\") e S80",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1I0ZeYzYA8a7V4Kjo-xYKru1yRvDUIQeM"
-  },
-  {
-    "model": "H50S85GUX",
-    "description": "Smart TV 50\" 4K - Série S85",
-    "file": "Firmware S85",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=18RLl0POdO3Gi9RwvoJeZ9And41xF0vqQ"
-  },
-  {
-    "model": "H55S85GUX",
-    "description": "Smart TV 55\" 4K - Série S85",
-    "file": "Firmware S85",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=18RLl0POdO3Gi9RwvoJeZ9And41xF0vqQ"
-  },
-  {
-    "model": "H65S85GUX",
-    "description": "Smart TV 65\" 4K - Série S85",
-    "file": "Firmware S85",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=18RLl0POdO3Gi9RwvoJeZ9And41xF0vqQ"
-  },
-  {
-    "model": "H75S85GUX",
-    "description": "Smart TV 75\" 4K - Série S85",
-    "file": "Firmware S85",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=18RLl0POdO3Gi9RwvoJeZ9And41xF0vqQ"
-  },
-  {
-    "model": "LE65U6600UA",
+    "model": "H65K6UG",
     "description": "Smart TV 65\" 4K UHD",
-    "file": "Firmware LE65U6600UA",
-    "size": "Consultar",
-    "date": "2026-08-10",
-    "url": "https://drive.google.com/uc?export=download&id=1N5jzg_3wbv-4bYAdiBQEqLVbRTUc8mQ-"
+    "file": "H65K6UG_update.zip",
+    "size": "1.6 GB",
+    "date": "2026-07-01",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H65K6UG/H65K6UG_update.zip"
+  },
+  {
+    "model": "LE42K6000",
+    "description": "Smart TV 42\" Full HD",
+    "file": "LE42K6000_update.zip",
+    "size": "420 MB",
+    "date": "2026-04-18",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-LE42K6000/LE42K6000_update.zip"
+  },
+  {
+    "model": "LE32K6000",
+    "description": "Smart TV 32\" HD",
+    "file": "LE32K6000_update.zip",
+    "size": "380 MB",
+    "date": "2026-03-25",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-LE32K6000/LE32K6000_update.zip"
+  },
+  {
+    "model": "H43K6FG",
+    "description": "Smart TV 43\" Full HD",
+    "file": "H43K6FG_update.zip",
+    "size": "450 MB",
+    "date": "2026-06-05",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H43K6FG/H43K6FG_update.zip"
+  },
+  {
+    "model": "H50K6FG",
+    "description": "Smart TV 50\" Full HD",
+    "file": "H50K6FG_update.zip",
+    "size": "460 MB",
+    "date": "2026-05-22",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H50K6FG/H50K6FG_update.zip"
+  },
+  {
+    "model": "H55K6FG",
+    "description": "Smart TV 55\" Full HD",
+    "file": "H55K6FG_update.zip",
+    "size": "470 MB",
+    "date": "2026-04-30",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H55K6FG/H55K6FG_update.zip"
+  },
+  {
+    "model": "H65K6FG",
+    "description": "Smart TV 65\" 4K UHD",
+    "file": "H65K6FG_update.zip",
+    "size": "520 MB",
+    "date": "2026-07-10",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H65K6FG/H65K6FG_update.zip"
+  },
+  {
+    "model": "H75K6FG",
+    "description": "Smart TV 75\" 4K UHD",
+    "file": "H75K6FG_update.zip",
+    "size": "580 MB",
+    "date": "2026-06-28",
+    "url": "https://github.com/SEU-USUARIO/haier-firmware-portal/releases/download/fw-H75K6FG/H75K6FG_update.zip"
   }
 ]
