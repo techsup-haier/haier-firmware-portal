@@ -667,4 +667,10 @@
 
     function escapeHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-    function debounc
+    function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
+
+    document.getElementById('searchInput').addEventListener('input', debounce(e => doSearch(e.target.value), 150));
+    loadCatalog();
+  </script>
+</body>
+</html>
