@@ -137,6 +137,15 @@
 
     .hero > * { position: relative; z-index: 1; }
 
+    .hero-logo {
+      margin-bottom: 20px;
+    }
+
+    .hero-logo img {
+      height: 48px;
+      display: inline-block;
+    }
+
     .hero h1 {
       font-size: 26px;
       font-weight: 700;
@@ -380,6 +389,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero { padding: 36px 16px 24px; }
+      .hero-logo img { height: 36px; }
       .hero h1 { font-size: 21px; }
       .search-input { font-size: 14px; padding: 13px 16px 13px 44px; }
       .results-area { padding: 0 16px 40px; }
@@ -414,6 +424,9 @@
 
   <!-- HERO + SEARCH -->
   <section class="hero">
+    <div class="hero-logo">
+      <img src="Logo_Haier_Padrao.png" alt="Haier">
+    </div>
     <h1>Busca de Firmware</h1>
     <p>Digite o modelo da TV para encontrar a atualização disponível.</p>
     <div class="search-wrapper">
