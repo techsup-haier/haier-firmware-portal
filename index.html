@@ -274,13 +274,6 @@
       letter-spacing: -0.2px;
     }
 
-    .card-description {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
     .card-meta {
       display: flex;
       gap: 14px;
@@ -377,6 +370,109 @@
       font-weight: 500;
     }
 
+    /* ── GUIDE SECTION ── */
+    .guide-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      width: 100%;
+    }
+
+    .guide-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 14px;
+      padding-left: 2px;
+    }
+
+    .guide-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .guide-card:hover {
+      border-color: var(--beige-3);
+      box-shadow: var(--shadow-md);
+    }
+
+    .guide-icon {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: rgba(0, 90, 170, 0.06);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--haier-blue);
+    }
+
+    .guide-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .guide-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .guide-subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .btn-guide {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 18px;
+      background: transparent;
+      color: var(--haier-blue);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--haier-blue);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.2px;
+      flex-shrink: 0;
+    }
+
+    .btn-guide:hover {
+      background: var(--haier-blue);
+      color: var(--white);
+    }
+
+    @media (max-width: 600px) {
+      .guide-section { padding: 0 16px 32px; }
+      .guide-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .guide-icon { display: none; }
+      .btn-guide {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
     /* ── HIGHLIGHT ── */
     mark {
       background: rgba(0, 90, 170, 0.08);
@@ -447,6 +543,24 @@
 
   <!-- RESULTS -->
   <section class="results-area" id="resultsArea"></section>
+
+  <!-- GUIDE -->
+  <section class="guide-section">
+    <div class="guide-label">Manual de Atualização</div>
+    <div class="guide-card">
+      <div class="guide-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="guide-info">
+        <div class="guide-title">Como atualizar o software da TV</div>
+        <div class="guide-subtitle">Passo a passo para realizar a atualização de firmware via USB</div>
+      </div>
+      <a class="btn-guide" href="Manual_Como_atualizar_o_software_da_TV.pdf" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Abrir PDF
+      </a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -524,7 +638,6 @@
         <div class="firmware-card">
           <div class="card-info">
             <div class="card-model">${highlightMatch(fw.model, query)}</div>
-            <div class="card-description">${escapeHtml(fw.description)}</div>
             <div class="card-meta">
               <span class="meta-item">${icons.file} ${escapeHtml(fw.file)}</span>
               <span class="meta-item">${icons.size} ${escapeHtml(fw.size)}</span>
@@ -532,7 +645,7 @@
             </div>
           </div>
           <div class="card-download">
-            <a class="btn-download" href="${escapeHtml(fw.url)}" download>
+            <a class="btn-download" href="${escapeHtml(fw.url)}" target="_blank" rel="noopener">
               ${icons.download} Baixar
             </a>
           </div>
